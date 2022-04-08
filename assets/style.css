@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background-color: #ccdad1;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--dark);
+    line-height: 1.5;
+    font-size: 20px;
+  }
+
+  h3, h4 {
+    font-size: 18px;
+    margin: 0;
+    color: rgb(4, 4, 77);
+    line-height: 1.25;
+    font-weight: bold
+  }
+
+  .btn {
+    font-size: 14px;
+    text-decoration:none;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: var(--light-dark);
+    box-shadow: 2px 2px var(--dark);
+    transform: translate(-1px, -1px);
+  }
+
+
+ 
