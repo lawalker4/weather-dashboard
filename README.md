@@ -26,6 +26,7 @@ Features
 Search the weather based on location.
 You will be presented with a 5-day forecast that displays the date, an icon that presents the weather condition, the temperature, the wind speed and humidity. 
 Search the weather in your area
+
 **ADD description and screenshot***
  
 Accessibility
