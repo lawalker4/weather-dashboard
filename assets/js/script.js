@@ -1,5 +1,10 @@
+//Adding var to search
 var cityInputEl = document.querySelector("#city-input");
-var submitButton = document.querySelector("#get-weather");
+var searchButton = document.querySelector("#search-button");
+var currentForecastEl = document.querySelector("#current-forcast");
+var futureForecastEl = document.querySelector("#futureforecast");
+var searchResultsEl = document.querySelector("#results");
+var searchHistory = document.querySelector("#search-history");
 var currentTemperature = $("#temperature");
 var currentHumidity= $("humidity");
 var currenWindSpeed= $("wind-speed");
@@ -7,6 +12,16 @@ var currentUvIndex=$("#uv-index");
 var city = [];
 
 var APIKey="ff06d6c0b03f8ea58a8409a49f112901";
+
+//Add current date
+var currentDate = moments().format("dddd, MMM Do");
+$("current-date").text(currentDate);
+
+// Add future dates
+var forecastDate2 = moment().add(1, "days").format("MMM D");
+var forecastDate3 = moment().add(2, "days").format("MMM D");
+
+ 
 
 
 
