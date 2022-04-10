@@ -1,5 +1,4 @@
-Weather Dashboard
-# weather-dashboard
+# Weather-Dashboard
 Server-Side APIs Challenge: Weather Dashboard
 
 
@@ -38,5 +37,5 @@ Search the weather in your area
 This app was built with all users in mind. Of course, as I am committed to including all users, I am ready to make future edits to address any areas that I may have missed.
 
 # Author
-<a target="_blank" href="https://github.com/lawalker">@ Laura Ashley Walker </a>
+<a target="_blank" href="https://github.com/lawalker">@ Laura Ashley Walker on GitHub </a>
 
