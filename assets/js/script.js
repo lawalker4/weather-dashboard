@@ -6,11 +6,6 @@ var futureForecastEl = document.querySelector("#futureforecast");
 var searchResultsEl = document.querySelector("#results");
 var searchHistory = document.querySelector("#search-history");
 var imgContainer = document.querySelector("#img-container");
-var currentTemperature = $("#temperature");
-var currentHumidity = $("humidity");
-var currenWindSpeed = $("wind-speed");
-var currentUvIndex = $("#uv-index");
-var city = [];
 
 var APIKey = "ff06d6c0b03f8ea58a8409a49f112901";
 
