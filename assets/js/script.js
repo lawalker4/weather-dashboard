@@ -10,7 +10,7 @@ var imgContainer = document.querySelector("#img-container");
 var APIKey = "ff06d6c0b03f8ea58a8409a49f112901";
 
 //Add current date
-var currentDate = moments().format("dddd, MMM Do");
+var currentDate = moment().format("dddd, MMM Do");
 $("#current-date").text(currentDate);
 
 // Add future dates
@@ -39,7 +39,6 @@ searchBtn.addEventListener("click", function (event) {
     } else {
         updateStorage(searchQuery);
         getCityData(searchQuery);
-        loadHistoryBtns(searchQuery);
     }
 });
 
@@ -52,7 +51,7 @@ function updateStorage(searchQuery) {
 
 //pull and save the city that was search
 function getCityData(searchQuery) {
-    var cityData = 
+    var cityData = "http:api.openweathermap.org/geo/1.0/direct?q=" + searchQuery + "&limit=1&appid=ff06d6c0b03f8ea58a8409a49f112901";
     console.log(userInput);
 
     fetch(cityData).then(function (response) {
@@ -125,7 +124,7 @@ function displayCurrent(weather, city, state) {
     imgContainer.appendChild(currentImg);
     currentForecastEl.appendChild(imgContainer);
 
-}
+
 
 //Weather container infomation
 var currentMainEl = document.createElement("h1")
@@ -171,7 +170,7 @@ if (weather.uvi <= 2) {
 
 currentForecastEl.appendChild(currentUviEl);
 
-
+}
 
 function displayForecast(forecasts) {
     futureForecastEl.textContent = "";
@@ -214,6 +213,8 @@ function displayForecast(forecasts) {
         futureForecastsEl.appendChild(forecastObj)
        
     }
+
+
 
 $("#forecast-1").text("Tomorrow");
 $("#forecast-2").text("forecastDate2");
