@@ -8,11 +8,11 @@
     <title>Weather Dashboard</title>
 
     <!--Using Bootstrap CSS-->
-    <link rel="stylehseet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
 
 
@@ -21,8 +21,9 @@
 <body>
     <header class="hero" id="hero">
         <h1 class="display-3">☀️ The Weather Dashboard ☀️</h1>
-        <p> Get your 5 day forescast quick and easy.</p>
+        <p class="lead"> Get your 5 day weather forecast quick and easy.</p>
         <p> Date: <span id="current-date"></span></p>
+        <p>Enter the city your would like to search below.</p>
 
     </header>
 
@@ -37,7 +38,7 @@
 
         <!--User serch history-->
         <div id="search-history">
-            <h4>Your Pervious Searches</h4>
+            <h5>Your Pervious Searches</h5>
         </div>
 
         <div id="results"></div>
@@ -48,11 +49,15 @@
             <div id="img-container">
             </div>
         </div>
-
-        <!-- Get your 5 day forecase-->
+        
+        <!-- Get your 5 day forecast-->
 
         <div id="future-forecast" class="row">
-            <h3>5-Day Forecast:</h3>
+            <h4>5-Day Forecast:</h4>
+        </div>
+
+        <div id="future-forecast" class="row">
+
         </div>
 
 
@@ -75,9 +80,6 @@
 </body>
 
     <!-- Optional JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-
 
 </html>

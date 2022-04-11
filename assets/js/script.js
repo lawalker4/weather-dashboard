@@ -1,6 +1,6 @@
 //Adding var to search
 var cityInputEl = document.querySelector("#city-input");
-var searchButton = document.querySelector("#search-button");
+var searchBtn = document.querySelector("#search-btn");
 var currentForecastEl = document.querySelector("#current-forcast");
 var futureForecastEl = document.querySelector("#futureforecast");
 var searchResultsEl = document.querySelector("#results");
@@ -169,8 +169,8 @@ function displayForecast(forecasts) {
     //Creating eachs cards own elements
 
     for (var i = 1; i <= 5; i++) {
-        var forecastObj.classList = "card card-small col-md-2";
-        var foreDate = document.createElement("h4");
+        var forecast = document.createElement("div");
+        forecastObj.classList = "card card-small col-md-2";
         foreDate.setAttribute("id","forecast-" + i);
         forecastObj.appendChild(foreDate);
         var foreImg = document.createElement("img")

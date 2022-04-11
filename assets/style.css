@@ -1,120 +1,144 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-  :root {
-    --primary:#ccdad1;
-    --secondary: rgb(15, 173, 247) ;  
-    --light-dark:white
-    --dark: rgb(1, 1, 61) (4,4,77);
+:root {
+  --primary:#ccdad1;
+  --secondary: rgb(15, 173, 247) ;  
+  --light-dark:white;
+  --dark: black;
+
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #ccdad1;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
+.container{
+  display: block;
+}
+
+/* h3, h4 {
+  font-size: 18px;
+  margin: 0;
+  color: rgb(4, 4, 77);
+  line-height: 1.25;
+  font-weight: bold */
+
+
+.btn {
+  font-size: 12px;
+  border-radius: .25rem;
+  height: 30px;
+  margin-right: 5px;
+  margin-bottom: 4.5px;
+  border: 2px soild;
+   
+}
+
+.btn:hover {
+  background-color:var(--dark);
+  transition: ease-in;
+  opacity: 70%;
+}
   
+input {
+  border-radius: .25rem;
+  border: 3px soild;
+  height: 30px;
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: var(--);
+  border-left: 2px soild var(--dark);
+  padding: 10px
+
+}
+
+.hero {
+  text-align: center;
+  background-color: var(--dark);
+  color: var(--primary);
+  border-radius: 0;
+  border-bottom: 2px soild var(--light-dark);
+  align-content:center;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  justify-content: space-between
+}
+
+.current-forecast {
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  text-align: center;
+  padding-bottom: 100%;
+}
+
+div {
+  align-content: center;
+  padding: 15px;
+}
+
+.card {
+  align-items: center;
+  align-content: center;
+  border: 10px soild;
+  border-color: var(--dark);
+  color: var(--dark);
+}
+
+.card-small {
+  margin: 5px;
+  width: 400px;
+  justify-content: space-between;
+  border: 5px soild;
+
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  justify-content: cent;
+}
+
+.footer {
+  background-color: var(--light-dark);
+  text-align: center;
+  justify-content: center;
+  height: 50px;
   }
 
-  body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #ccdad1;
-    font-size: 20px;
-    color: var(--dark);
-    line-height: 1.5;
+  footer p, footer a {
     text-align: center;
-    justify-content: center;
+    color: black;
+    margin-top: 20px;
+    text-decoration: none;
   }
-  .container{
-    display: block;
-  }
-
-  h3, h4 {
-    font-size: 18px;
-    margin: 0;
-    color: rgb(4, 4, 77);
-    line-height: 1.25;
-    font-weight: bold
-  }
-
-  .btn {
-    font-size: 14px;
-    border-radius: .25rem;
-    height: 30px;
-    margin-right: 5px;
-    margin-bottom: 4.5px;
-    outline: soild;
-     
-  }
-
-  .btn:hover {
-    background-color:var(--light-dark);
-    transition: ease-in;
-    opacity: 90%;
-  }
-    
-  input {
-    border: 3px soild;
-    height: 30px;
-    text-align: center;
-    justify-content: center;
-  }
-
-  textarea {
-    background: transparent;
-    border: none;
-    resize: none;
-    color: var(--);
-    border-left: 2px soild var(--dark);
-    padding: 8px
-
-  }
-  
-  .hero {
-    text-align: center;
-    background-color: var(--dark);
-    /* color: var(--primary); */
-    border-bottom: 2px soil var (--dark);
-    border-radius: 0;
-    align-content:center;
-  }
-
-  .time-block {
-    text-align: center;
-    border-radius: 15px;
-  }
-
-  .row {
-    justify-content: space-between
-  }
-
-  .current-forecast {
-    justify-content: center;
-    text-align: center;
-  }
-
-  main {
-    text-align: center;
-    padding-bottom: 100%;
-  }
-
-  div {
-    align-content: center;
-    padding: 15px;
-  }
-
-  .card {
-    align-items: center;
-    align-content: center;
-    border: 10px soild;
-    border-color: var(--dark);
-    color: var(--dark);
-  }
-
-  .card-small {
-    margin: 5px;
-    width: 400px;
-    justify-content: space-between;
-    border: 5px soild;
-
-  }
-
 
 
 
