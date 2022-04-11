@@ -11,14 +11,13 @@ var APIKey = "ff06d6c0b03f8ea58a8409a49f112901";
 
 //Add current date
 var currentDate = moments().format("dddd, MMM Do");
-$("current-date").text(currentDate);
+$("#current-date").text(currentDate);
 
 // Add future dates
-var forecastDate1 = moment().add(1, "days").format("MMM D");
-var forecastDate2 = moment().add(2, "days").format("MMM D");
-var forecastDate3 = moment().add(3, "days").format("MMM D");
-var forecastDate4 = moment().add(4, "days").format("MMM D");
-var forecastDate5 = moment().add(5, "days").format("MMM D");
+var forecastDate2 = moment().add(1, "days").format("MMM D");
+var forecastDate3 = moment().add(2, "days").format("MMM D");
+var forecastDate4 = moment().add(3, "days").format("MMM D");
+var forecastDate5 = moment().add(4, "days").format("MMM D");
 
 var userInput = [];
 
@@ -27,7 +26,7 @@ function roundNum(num) {
     return Math.floor(num);
 }
 
-searchButton.addEventListener("click", function (event) {
+searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
     //search for your city
@@ -53,7 +52,7 @@ function updateStorage(searchQuery) {
 
 //pull and save the city that was search
 function getCityData(searchQuery) {
-    var cityData = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchQuery + "&limit=1&appid=ff06d6c0b03f8ea58a8409a49f112901";
+    var cityData = 
     console.log(userInput);
 
     fetch(cityData).then(function (response) {
@@ -105,11 +104,11 @@ function getWeatherData(city, state) {
 }
 
 function displayCurrent(weather, city, state) {
-    currentForecastEl.textCont = "";
+    currentForecastEl.textContent = "";
     searchResultsEl.textContent = "";
     imgContainer.textcontent = "";
     $("#search-bar").val("");
-    $("#currentforecast").removeClass("invisible");
+    $("#current-forecast").removeClass("invisible");
 
     var cityStateEl = document.createElement("h3");
     cityStateEl.textContent = "Your Current Weather For:" + city + "" + state;
@@ -129,20 +128,20 @@ function displayCurrent(weather, city, state) {
 }
 
 //Weather container infomation
-var currentMainEl = document.createElement(h1)
+var currentMainEl = document.createElement("h1")
 currentMainEl.textContent = weather.weather[0].main;
 currentForecastEl.appendChild(currentMainEl);
 
 //Current Temperature
 
 var currentTempEl = document.createElement("h4");
-currentTempEl.textContent = "Temperature" + roundNum(weather.temp) + "";
+currentTempEl.textContent = "Temperature" + roundNum(weather.temperature);
 currentForecastEl.appendChild(currentTempEl);
 
 //Current Windspeed
 
 var currentWindSpeedEl = document.createElement("h4");
-currentWindSpeedEl.textContent = "Wind Speed:" +roundNum(weather.wind_speed) + "mph";
+currentWindSpeedEl.textContent = "Wind Speed:" + roundNum(weather.wind_speed) + "mph";
 currentForecastEl.appendChild(currentWindSpeedEl);
 
 //Current Humidity:
@@ -154,8 +153,25 @@ currentForecastEl.appendChild(currentHumidityEl);
 
 //Current UV Rays. Different colors = different intensity of the UV Rays
 
-var currentUvIndexEl = document.createElement("h4");
-currentUvIndexEl.textContent = "UV Index:" + weather.uvi;
+var currentUVIEl = document.createElement("h4");
+currentUviEl.textContent = "UV Index:" + weather.uvi;
+
+if (weather.uvi >= 8) {
+    currentUviEl.classList = "red";
+}
+if (weather.uvi >= 6 && weather.uvi <= 7) {
+    currentUviEl.classList = "orange";
+}
+if (weather.uvi >= 3 && weather.uvi <= 5) {
+    currentUviEl.classList = "yellow";
+}
+if (weather.uvi <= 2) {
+    currentUviEl.classList = "green";
+}
+
+currentForecastEl.appendChild(currentUviEl);
+
+
 
 function displayForecast(forecasts) {
     futureForecastEl.textContent = "";
