@@ -65,34 +65,6 @@ function onPageLoad(){
     }
 }
 
-
-
-//obtain UV information
-function uvInfo(longitude,latitude){
-    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+latitude+"&lon="+longitude;
-    $.ajax({ url:uvqURL, }).then(function(response){ $(currentUvindex).html(response.value);
-                if (response.value > 6){
-                $(currentUvindex).attr("class","current bg-danger py-2 px-2 text-white")}
-                else if (response.value <3) {  $(currentUvindex).attr("class","current bg-warning py-2 px-2 text-white")   }
-                else {  $(currentUvindex).attr("class","current bg-success py-2 px-2 text-white")}
-            });
-}
-    
-// add previously stored data on page refresh if it exists 
-function firstload (){
-    if (localStorage.getItem("cityname")){
-        onPageLoad();
-    }
-}
-
-firstload();
-
-// click events 
-$("#search-button").on("click",WeatherPresentation);
-$(document).on("click",PastHistory);
-$(window).on("load",LastItem);
-$("#clear-history").on("click",RemoveAllHistory);
-
 //Main Weather API to get five day forecast 
 function forecast(cityid){
     var dayover= false;
@@ -116,6 +88,31 @@ function forecast(cityid){
         
     });
 }
+
+//Weather info for user
+function uvInfo(longitude,latitude){
+    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+latitude+"&lon="+longitude;
+    $.ajax({ url:uvqURL, }).then(function(response){ $(currentUvindex).html(response.value);
+                        });
+}
+
+
+    
+// add previously stored data on page refresh if it exists 
+function firstload (){
+    if (localStorage.getItem("cityname")){
+        onPageLoad();
+    }
+}
+
+firstload();
+
+// click events 
+$("#search-button").on("click",WeatherPresentation);
+$(document).on("click",PastHistory);
+$(window).on("load",LastItem);
+$("#clear-history").on("click",RemoveAllHistory);
+
 
 //get past history
 function PastHistory(event){
@@ -144,18 +141,6 @@ function LastItem(){
     }
 
 }
-
-//weather infomation for the user
-function WeatherPresentation(event){
-    event.preventDefault();
-    if(document.getElementById("future-weather") == null){ onPageLoad()
-        ;}
-        if(SelectedCity.val().trim()!==""){
-        city=SelectedCity.val().trim();
-        Day0Forecast(city);
-    }
-}
-
 
 //The userrs current forecast
 function Day0Forecast(city){

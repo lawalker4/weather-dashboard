@@ -11,10 +11,11 @@ Server-Side APIs Challenge: Weather Dashboard
 
 
 # Introduction
-***Add intro***
+This weather dashboard app is a simple easy to use app that allows you to search the weather in any city but also it will give you the 5 day forcast. 
  
 
 # Technologies
+* Open Weather API
 * JavaScript
 * Local Storage
 * HTML
@@ -25,6 +26,9 @@ Server-Side APIs Challenge: Weather Dashboard
 Deployment Link
 * To run locally:
     * Clone down this repo
+
+Screenshot:
+./images/Screenshot.jpg
 
 # Features
 
