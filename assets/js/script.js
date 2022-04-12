@@ -68,8 +68,8 @@ function onPageLoad(){
 //Main Weather API to get five day forecast 
 function forecast(cityid){
     var dayover= false;
-    var queryforcastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
-    $.ajax({ url:queryforcastURL,
+    var queryforecastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
+    $.ajax({ url:queryforecastURL,
     }).then(function(response){
         
         for (var i=0 ; i<5 ;i++){
@@ -89,6 +89,7 @@ function forecast(cityid){
     });
 }
 
+
 //Weather info for user
 function uvInfo(longitude,latitude){
     var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+latitude+"&lon="+longitude;
@@ -96,26 +97,15 @@ function uvInfo(longitude,latitude){
                         });
 }
 
+  
 
-    
-// add previously stored data on page refresh if it exists 
-function firstload (){
-    if (localStorage.getItem("cityname")){
-        onPageLoad();
-    }
-}
-
-firstload();
-
-// click events 
 $("#search-button").on("click",WeatherPresentation);
 $(document).on("click",PastHistory);
 $(window).on("load",LastItem);
 $("#clear-history").on("click",RemoveAllHistory);
 
 
-//get past history
-function PastHistory(event){
+function pastHistory(event){
     var liEl=event.target;
     if (event.target.matches("li")){
         city=liEl.textContent.trim();
@@ -124,7 +114,7 @@ function PastHistory(event){
 
 }
 
-//add and modify list items 
+//Added list items
 function LastItem(){
     $("ul").empty();
     var SearchedCity = JSON.parse(localStorage.getItem("cityname"));
@@ -141,6 +131,18 @@ function LastItem(){
     }
 
 }
+
+//weather infomation for the user
+function WeatherPresentation(event){
+    event.preventDefault();
+    if(document.getElementById("future-weather") == null){ onPageLoad()
+        ;}
+        if(SelectedCity.val().trim()!==""){
+        city=SelectedCity.val().trim();
+        Day0Forecast(city);
+    }
+}
+
 
 //The userrs current forecast
 function Day0Forecast(city){
@@ -163,6 +165,8 @@ function Day0Forecast(city){
         var windsmph=(ws*2.237).toFixed(1);
         $(currentWSpeed).html(windsmph+"MPH");
         uvInfo(response.coord.lon,response.coord.lat);
+
+    //User can see past search history
         forecast(response.id);
         SearchedCity=JSON.parse(localStorage.getItem("cityname"));
         if (SearchedCity==null){

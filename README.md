@@ -27,8 +27,7 @@ Deployment Link
 * To run locally:
     * Clone down this repo
 
-Screenshot:
-./images/Screenshot.jpg
+./assets/images/Screenshot.jpg
 
 # Features
 
