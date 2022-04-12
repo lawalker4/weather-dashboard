@@ -18,19 +18,10 @@ body {
   display: block;
 }
 
-/* h3, h4 {
-  font-size: 18px;
-  margin: 0;
-  color: rgb(4, 4, 77);
-  line-height: 1.25;
-  font-weight: bold */
-
-
 .btn {
   font-size: 12px;
   border-radius: .25rem;
   border: 2px soild;
-  height: 40px;
   margin-right: 5px;
   margin-bottom: 4.25px;
    
@@ -68,9 +59,14 @@ textarea {
   align-content:center;
 }
 
-.description {
-  white-space: pre-wrap;
+span {
+  font-size: 1em;
 }
+
+.forecast {
+  font-size: 1em;
+}
+
 
 .time-block {
   text-align: center;
@@ -81,10 +77,6 @@ textarea {
   justify-content: space-between
 }
 
-.current-forecast {
-  justify-content: center;
-  text-align: center;
-}
 
 main {
   text-align: center;
@@ -96,21 +88,6 @@ div {
   padding: 15px;
 }
 
-.card {
-  align-items: center;
-  align-content: center;
-  border: 5px soild;
-  border-color: var(--secondary);
-  color: var(--dark);
-}
-
-.card-small {
-  margin: 5px;
-  width: 400px;
-  justify-content: space-between;
-  border: 5px soild;
-
-}
 
 img {
   height: 100px;
@@ -139,7 +116,6 @@ img {
   background-color: var(--light-dark);
   text-align: center;
   justify-content: center;
-  height: 50px;
   }
 
   footer p, footer a {

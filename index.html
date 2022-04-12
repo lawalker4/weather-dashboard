@@ -31,40 +31,39 @@
 
     <!-- content section of page where general info and weather details are-->
     <main class="container">
-        <form id="search-form">
-            <label for="search-bar" id="error"></label>
-            <input class="col-4" aria-label="Search by city" id="search-bar" placeholder="Enter your city">
-            <button type="search" id="search-btn" class="btn">Get Weather</button>
-        </form>
-
-        <!--User serch history-->
-        <div id="search-history">
-            <h5>Your Pervious Searches</h5>
-        </div>
-
-        <div id="results"></div>
-
-        <!--Get todays forecast-->
-
-        <div id="current-forecast" class="card invisible">
-            <div id="img-container">
+        <div class="row">
+        <div class ="col-lrg-4 bg-light">         
+            <h4>To Get Your Local Weather</h4>
+            <div class="input-group-append">
+            <input type="text" class="form-control" aria-label="Search by city" id="search-city" placeholder="Enter your city">
+            <button class="btn" id="search-button">Click here to get Weather</button>
             </div>
         </div>
-        
-        <!-- Get your 5 day forecast-->
 
-        <div id="future-forecast" class="row">
-            <h4>5-Day Forecast:</h4>
+        <!--User serch history-->
+        <div class="row">
+        <button class="btn btn-secondary" type="button" id=clear-history">Clear Past SearchWeather History</button>
+        <ul class="list-group">
+
+        </ul>
         </div>
-
-        <div id="future-forecast" class="row">
-
         </div>
+        </div>
+    <!--Your current weather search-->
 
-
+        <div class="col-sm-8" id="main-div">
+            <div class="row ml-6 col-sm-12 border">
+                <div class="col-sm-12" id="current weather">
+                    <h3 clas="city-name mb-3 mt-3 bold" id="current-city"></h3>
+                    <p> &#x1F321 Temperature: <span class="current" id="temperature"></span></p>
+                    <p> &#x1F32A Wind Speed: <span class="current" id="wind-speed"></span></p>
+                    <p> &#x2614 Humidity: <span class="current" id="humidity"></span></p>
+                    <p> &#x2600 UV Index: <span class="current py-2 px-2" id="uvindex"></span></p>
+                </div>
+            </div>
+           
     </main>
 
-    <footer>
         <footer>
             <div class="foot-content">
                 <p>Built and maintained by:
@@ -76,11 +75,11 @@
             </div>
         </footer>
 
-    </footer>
-
-
+    
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
