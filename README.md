@@ -23,7 +23,7 @@ This weather dashboard app is a simple easy to use app that allows you to search
  
 
 # Deployment
-Deployment Link
+Deployment Link: <a target= "_blank" href="https://lawalker4.github.io/weather-dashboard/"> Weather Dashboard</a>
 * To run locally:
     * Clone down this repo
 
